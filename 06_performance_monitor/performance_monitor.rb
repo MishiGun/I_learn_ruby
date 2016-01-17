@@ -1,9 +1,9 @@
-def measure (num = 1)
+def measure (times = 1) 
   start = Time.now
-  count = num
+  count = times
   while count > 0
-    yield
+    yield if block_given?
     count = count - 1
   end
-  (Time.now - start) / num
+  (Time.now - start) / times
 end

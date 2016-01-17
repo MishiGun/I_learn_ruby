@@ -13,4 +13,8 @@ def time_string
 	str = a + ":" + b + ":" + c
 end
 
+def padded (num)
+	"%02d" % num
+end
+
 end

@@ -1,4 +1,4 @@
-# # Topics
+# # Topics 
 #
 # * Hash
 # * Array
@@ -8,7 +8,7 @@
 
 require 'dictionary'
 
-describe Dictionary do
+describe Dictionary do 
   before do
     @d = Dictionary.new
   end
@@ -30,23 +30,23 @@ describe Dictionary do
   end
 
   it 'can check whether a given keyword exists' do
-    @d.include?('fish').should be_false
+    @d.include?('fish').should == false
   end
 
   it "doesn't cheat when checking whether a given keyword exists" do
-    @d.include?('fish').should be_false # if the method is empty, this test passes with nil returned
+    @d.include?('fish').should == false # if the method is empty, this test passes with nil returned
     @d.add('fish')
-    @d.include?('fish').should be_true # confirms that it actually checks
-    @d.include?('bird').should be_false # confirms not always returning true after add
+    @d.include?('fish').should == true # confirms that it actually checks
+    @d.include?('bird').should == false # confirms not always returning true after add
   end
 
   it "doesn't include a prefix that wasn't added as a word in and of itself" do
     @d.add('fish')
-    @d.include?('fi').should be_false
+    @d.include?('fi').should == false
   end
 
   it "doesn't find a word in empty dictionary" do
-    @d.find('fi').should be_empty # {}
+    @d.find('fi').should be_empty
   end
 
   it 'finds nothing if the prefix matches nothing' do
